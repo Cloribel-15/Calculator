@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<style>
+    .calculator {
+  width: 250px;
+  height: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 5px solid #F2789F;
+  border-radius: 5px;
+  background-color: #F9C5D5;
+}
+
+input[type="text"] {
+  width: 100%;
+  height: 45px;
+  padding: 1px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  background-color: #FEE3EC;
+}
+
+button {
+  width: 55px;
+  height: 65px;
+  font-size: 18px;
+  margin: 2px;
+  background-color: #FEE3EC;
+}
+
+// Function to append a value to the display
+function appendValue(value) {
+    document.getElementById('display').value += value;
+}
+
+// Function to append an operator to the display
+function appendOperator(operator) {
+    document.getElementById('display').value += operator;
+}
+
+// Function to clear the display
+function clearDisplay() {
+    document.getElementById('display').value = '';
+}
+
+// Function to calculate the result
+function calculate() {
+    var displayValue = document.getElementById('display').value;
+    var result = eval(displayValue); // Using eval() can be a security risk in some cases, so be cautious when using it
+    document.getElementById('display').value = result;
+}
+
+</style>
+<body>
+    <h2> Cloribel & Diez</h2>
+    <div class="calculator">
+        <input type="text" id="display" readonly>
+        <div class="keypad">
+            <button onclick="clearDisplay()">C</button>
+            <button onclick="appendValue(7)">7</button>
+            <button onclick="appendValue(8)">8</button>
+            <button onclick="appendValue(9)">9</button>
+            <button onclick="appendValue(4)">4</button>
+            <button onclick="appendValue(5)">5</button>
+            <button onclick="appendValue(6)">6</button>
+            <button onclick="appendValue(1)">1</button>
+            <button onclick="appendValue(2)">2</button>
+            <button onclick="appendValue(3)">3</button>
+            <button onclick="appendValue(0)">0</button>
+            <button onclick="appendValue('.')">.</button>
+            <button onclick="calculate()">=</button>
+            <button onclick="appendOperator('+')">+</button>
+            <button onclick="appendOperator('-')">-</button>
+            <button onclick="appendOperator('*')">*</button>
+            <button onclick="appendOperator('/')">/</button>
+        </div>
+    </div>
+
+    <script>
+        // Function to append a value to the display
+function appendValue(value) {
+    document.getElementById('display').value += value;
+}
+
+// Function to append an operator to the display
+function appendOperator(operator) {
+    document.getElementById('display').value += operator;
+}
+
+// Function to clear the display
+function clearDisplay() {
+    document.getElementById('display').value = '';
+}
+
+// Function to calculate the result
+function calculate() {
+    var displayValue = document.getElementById('display').value;
+    var result = eval(displayValue); // Using eval() can be a security risk in some cases, so be cautious when using it
+    document.getElementById('display').value = result;
+}
+    </script>
+</body>
+</html>
+
